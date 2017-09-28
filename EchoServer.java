@@ -20,7 +20,7 @@ public final class EchoServer {
             while (true) {
                 try (Socket socket = serverSocket.accept()) {
                     String address = socket.getInetAddress().getHostAddress();
-                    System.out.printf("Client connected: %s%n", address);
+                    //System.out.printf("Client connected: %s%n", address);
                     OutputStream os = socket.getOutputStream();
                     PrintStream out = new PrintStream(os, true, "UTF-8");
                     out.printf("Hi %s, thanks for connecting!%n", address);

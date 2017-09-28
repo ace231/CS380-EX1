@@ -11,20 +11,24 @@ public final class EchoClient {
     public static void main(String[] args) throws Exception {
 		BufferedReader kb = new BufferedReader(new InputStreamReader(System.in));
 		String msg = "";
-        try (Socket socket = new Socket("localhost", 22222)) {
-			//while(true) {
+		while(true){
+			try (Socket socket = new Socket("localhost", 22222)) {
+					
+				String address = socket.getInetAddress().getHostAddress();
+				InputStream is = socket.getInputStream();
+				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+				BufferedReader br = new BufferedReader(isr);
+				System.out.println(br.readLine());
 				
-			String address = socket.getInetAddress().getHostAddress();
-            InputStream is = socket.getInputStream();
-            InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-            BufferedReader br = new BufferedReader(isr);
-            System.out.println(br.readLine());
-			
-			OutputStream os = socket.getOutputStream();
-            PrintStream out = new PrintStream(os, true, "UTF-8");
-            out.printf("Hi server! This is %s", address);
-			//}
-        }
+				OutputStream os = socket.getOutputStream();
+				PrintStream out = new PrintStream(os, true, "UTF-8");
+				//out.printf("Hi server! This is %s", address);
+				msg = kb.readLine();
+				//System.out.printf("Sending %s%n",msg);//delete
+				out.printf("%s",msg);
+				
+			}
+		}
     }
 }
 
