@@ -1,7 +1,7 @@
 /*****************************************
 *	Alfredo Ceballos
 *	CS 380 - Computer Networks
-*	Excercise 1
+*	Exercise 1
 *	Professor Nima Davarpanah
 *****************************************/
 
