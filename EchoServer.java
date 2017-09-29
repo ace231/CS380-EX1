@@ -69,7 +69,8 @@ public final class EchoServer {
 							System.out.println("A client has disconnected...");
 					}
 				};	// Ending of echoServerThread
-				
+		    
+				// A thread runs after the server accepts a connection
 				new Thread(echoServerThread).start();
 			}	//Ending or loop
 			
