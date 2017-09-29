@@ -30,7 +30,7 @@ public final class EchoClient {
 		 */
 		 
 		//Creating input and output streams for the client
-		String address = socket.getInetAddress().getHostAddress();
+		//String address = socket.getInetAddress().getHostAddress();
 		InputStream is = socket.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is, "UTF-8");
 		BufferedReader br = new BufferedReader(isr);
