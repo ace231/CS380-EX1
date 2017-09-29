@@ -24,6 +24,9 @@ public final class EchoClient {
 				PrintStream out = new PrintStream(os, true, "UTF-8");
 				//out.printf("Hi server! This is %s", address);
 				msg = kb.readLine();
+				if(msg.toLowerCase().equals("exit")){
+					System.exit(0);
+				}
 				//System.out.printf("Sending %s%n",msg);//delete
 				out.printf("%s",msg);
 				
